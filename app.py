@@ -10,7 +10,7 @@ from datetime import datetime
 
 # Utils
 import joblib 
-pipe_lr = joblib.load(open("../notebbok/emotion_classifier_pipe.pkl","rb"))
+pipe_lr = joblib.load(open("C:\\Users\\lawan\\OneDrive\\Documents\\Projects\\Emotion-in-Text-classifier\\notebbok\\emotion_classifier_pipe.pkl", "rb"))
 
 # Fxn
 def predict_emotions(docx):
@@ -27,7 +27,7 @@ emotions_emoji_dict = {"anger":"😠","disgust":"🤮", "fear":"😨😱", "happ
 # Main Application
 def main():
 	st.title("Emotion Classifier App")
-	menu = ["Home","Monitor","About"]
+	menu = ["Home","About"]
 	choice = st.sidebar.selectbox("Menu",menu)
 	
 	if choice == "Home":
@@ -38,7 +38,7 @@ def main():
 			submit_text = st.form_submit_button(label='Submit')
 
 		if submit_text:
-			col1,col2  = st.beta_columns(2)
+			col1,col2  = st.columns(2)
 
 			# Apply Fxn Here
 			prediction = predict_emotions(raw_text)
@@ -68,9 +68,9 @@ def main():
 
 
 
-	elif choice == "Monitor":
-		st.subheader("Monitor App")
-
+	elif choice == "About":
+		st.subheader("About")
+		st.text("Emotion in Text Classifier: Analyzing Emotional Content in Textual Data \nIntroduction: Emotion in text classifiers is a fascinating application of natural \nlanguage processing (NLP) and machine learning that seeks to decipher and categorize \nthe emotional nuances conveyed through written text. In an age where text \ncommunication is prolific – from social media posts and customer reviews to news \narticles and chat conversations – understanding the emotional tone underlying \nthe text becomes a valuable asset for various fields, from marketing and customer \nservice to psychology and social sciences. \n \nUnderstanding Emotion Classification: Emotion classification involves training \nalgorithms to recognize and categorize different emotional states within a piece of \ntext. Unlike sentiment analysis, which categorizes text into broad sentiments like \npositive, negative, or neutral, emotion classification delves deeper, attempting to \npinpoint specific emotions such as joy, anger, fear, sadness, surprise, and more. \nThis granularity provides a richer understanding of the emotional context within \ntext.")
 
 if __name__ == '__main__':
 	main()
