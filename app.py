@@ -13,7 +13,7 @@ import joblib
 pipe_lr = joblib.load(open("C:\\Users\\lawan\\OneDrive\\Documents\\Projects\\Emotion-in-Text-classifier\\notebbok\\emotion_classifier_pipe.pkl", "rb"))
 
 st.set_page_config(
-    page_title="Your App Name",
+    page_title="Moodmapper",
     page_icon=":chart_with_upwards_trend:",
     layout="wide",
 )
