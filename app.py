@@ -9,15 +9,15 @@ import numpy as np
 from datetime import datetime
 
 # Utils
-import joblib 
+import joblib
 
-import os
+model_path = "emotion_classifier_pipe.pkl"
 
-# Get the absolute path to the model file
-model_path = os.path.abspath("emotion_classifier_pipe.pkl")
+try:
+    pipe_lr = joblib.load(open(model_path, "rb"))
+except Exception as e:
+    st.error(f"Error loading the model: {str(e)}")
 
-# Load the model
-pipe_lr = joblib.load(open(model_path, "rb"))
 
 # Set custom title and page configuration
 st.set_page_config(
