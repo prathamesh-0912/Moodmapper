@@ -11,8 +11,13 @@ from datetime import datetime
 # Utils
 import joblib 
 
-# Load the pre-trained model
-pipe_lr = joblib.load(open("emotion_classifier_pipe.pkl", "rb"))
+import os
+
+# Get the absolute path to the model file
+model_path = os.path.abspath("emotion_classifier_pipe.pkl")
+
+# Load the model
+pipe_lr = joblib.load(open(model_path, "rb"))
 
 # Set custom title and page configuration
 st.set_page_config(
