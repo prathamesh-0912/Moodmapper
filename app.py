@@ -16,7 +16,6 @@ import pickle
 with open("emotion_classifier_pipe.pkl", "rb") as model_file:
     pipe_lr = pickle.load(model_file)
 
-
 # Define the dictionary for emojis
 emotions_emoji_dict = {
     "anger": "😠",
