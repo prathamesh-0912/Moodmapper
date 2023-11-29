@@ -11,12 +11,10 @@ from datetime import datetime
 # Utils
 import joblib
 
-model_path = "emotion_classifier_pipe.pkl"
+import joblib
 
-try:
-    pipe_lr = joblib.load(open(model_path, "rb"))
-except Exception as e:
-    st.error(f"Error loading the model: {str(e)}")
+# Load the pre-trained model
+pipe_lr = joblib.load(open("emotion_classifier_pipe.pkl", "rb"))
 
 
 # Define the dictionary for emojis
