@@ -19,13 +19,6 @@ except Exception as e:
     st.error(f"Error loading the model: {str(e)}")
 
 
-# Set custom title and page configuration
-st.set_page_config(
-    page_title="Moodmapper - Emotion Classifier App",
-    page_icon=":chart_with_upwards_trend:",
-    layout="wide",
-)
-
 # Define the dictionary for emojis
 emotions_emoji_dict = {
     "anger": "😠",
