@@ -11,12 +11,10 @@ from datetime import datetime
 # Utils
 import joblib
 
-model_path = "emotion_classifier_pipe.pkl"
-
-try:
-    pipe_lr = joblib.load(open(model_path, "rb"))
-except Exception as e:
-    st.error(f"Error loading the model: {str(e)}")
+import pickle
+# Load the model using pickle
+with open("emotion_classifier_pipe.pkl", "rb") as model_file:
+    pipe_lr = pickle.load(model_file)
 
 
 # Define the dictionary for emojis
