@@ -1,7 +1,0 @@
-streamlit
-pandas
-numpy
-altair
-datetime
-joblib
-plotly>=5.0
